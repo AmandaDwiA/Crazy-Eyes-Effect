@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #5c0836; /* Warna latar belakang gelap seperti di video */
+    overflow: hidden; /* Sembunyikan scrollbar jika mata melebihi batas */
+}
+
+.eye-grid {
+    display: grid;
+    /* Membuat grid 8x8 (sesuaikan jumlah kolom dan baris di JS) */
+    grid-template-columns: repeat(8, auto);
+    gap: 15px; /* Jarak antara mata */
+}
+
+/* Gaya untuk seluruh bola mata (putihnya) */
+.eye {
+    width: 50px; /* Ukuran bola mata */
+    height: 50px;
+    background-color: white;
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Penting agar pupil tidak keluar dari bola mata */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk pupil (bagian tengah) */
+.pupil {
+    width: 25px; /* Ukuran pupil */
+    height: 25px;
+    background-color: rgb(12, 11, 9); /* Warna biru-hijau pada pupil */
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute; /* Memungkinkan pergerakan relatif terhadap .eye */
+    transition: transform 0.1s ease-out; /* Animasi pergerakan yang mulus */
+}
